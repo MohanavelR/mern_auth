@@ -18,7 +18,7 @@ const app = express()
 // Middle Wares
 app.use(express.json())
 app.use(cookieParser())
-const allowedOrigins=['http://localhost:5173']
+const allowedOrigins=['http://localhost:5173',"https://mern-auth-beta-seven.vercel.app"]
 app.use(cors({
     origin:allowedOrigins,
     credentials:true

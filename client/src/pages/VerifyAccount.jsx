@@ -36,11 +36,11 @@ const VerifyAccount = () => {
       }
   }
   
-  useEffect(() => {
-    if (!isLoggedIn || userData || userData.isAccountVerified) {
-      return navigate("/");
-    }
-  }, [isLoggedIn, userData]);
+useEffect(() => {
+  if (!isLoggedIn || userData?.isAccountVerified) {
+    navigate("/");
+  }
+}, [isLoggedIn, userData, navigate]);
   return (
     <>
       <div className="form-box">

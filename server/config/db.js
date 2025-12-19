@@ -1,9 +1,10 @@
+// db/connection.js
 const mongoose = require("mongoose");
 
 const DB_URL = process.env.DB_URL;
 
 if (!DB_URL) {
-  throw new Error("DB_URL missing in environment variables");
+  throw new Error("DB_URL not set");
 }
 
 let cached = global.mongoose;

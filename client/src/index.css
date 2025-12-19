@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+ @import "tailwindcss";
+
+.bg-custom-blue{
+    background-color: rgb(4, 4, 44);
+} 
+.bg-custom-blue-800{
+    background-color: rgb(7, 7, 86);
+    white-space: nowrap;
+} 
+
+
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+@layer components {
+  .input-box {
+    @apply bg-zinc-700 gap-5 text-white flex p-3 rounded-3xl;
+  }
+  .input-field{
+     @apply flex max-w-lg  outline-none border-none
+  }
+  .form-box{
+    @apply min-h-screen bg-purple-400 flex items-center justify-center 
+  }
+  .form-field{
+    @apply p-5 md:p-8 mt-10 text-white bg-stone-900 rounded-lg shadow-md w-80 md:w-full  max-w-sm lg:max-w-md space-y-5
+  }
+  .label-field{
+    @apply ms-2 mt-1 font-medium
+  }.heading{
+    @apply text-2xl md:text-4xl text-white  font-bold text-center
+  }.sub-heading{
+     @apply text-sm text-white  font-bold text-center
+  }
+  .btn-field{
+    @apply flex items-center gap-2 border border-gray-500
+     rounded-full px-3 cursor-pointer sm:px-6 py-2 text-gray-800 hover:bg-gray-600 hover:text-white duration-500 transition-all
+  }
+  .form-btn{
+    @apply w-100 bg-indigo-700 cursor-pointer text-white font-semibold  p-3 rounded-4xl hover:bg-indigo-600 transition duration-200
+  }
+  
+}
+

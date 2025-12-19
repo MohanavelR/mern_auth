@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const DB_URL = process.env.DB_URL;
 
 if (!DB_URL) {
-  throw new Error("DB_URL not defined in environment variables");
+  throw new Error("DB_URL missing in environment variables");
 }
 
 let cached = global.mongoose;
@@ -12,7 +12,7 @@ if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
 
-const setDB_Connection = async () => {
+async function setDB_Connection() {
   if (cached.conn) {
     return cached.conn;
   }
@@ -25,8 +25,7 @@ const setDB_Connection = async () => {
   }
 
   cached.conn = await cached.promise;
-  console.log("Database Connected");
   return cached.conn;
-};
+}
 
 module.exports = setDB_Connection;
